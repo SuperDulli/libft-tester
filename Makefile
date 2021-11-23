@@ -6,7 +6,7 @@
 #    By: chelmerd <chelmerd@student.wolfsburg.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 15:42:03 by chelmerd          #+#    #+#              #
-#    Updated: 2021/11/23 10:34:11 by chelmerd         ###   ########.fr        #
+#    Updated: 2021/11/23 11:16:43 by chelmerd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,14 @@ MAKE_FOLDER = ../
 NAME = libft_tester
 NAME_BONUS = libft_bonus_tester
 HEADER = ../libft.h
+LIBFT_PATH = ../
 
-all: m b
 
 m: $(NAME).o makelib
-	$(CC) -o $(NAME) $< -L ..
+	$(CC) -o $(NAME) $< $(LIBFT_PATH)libft.a && ./$(NAME) && rm -f $(NAME)
 
 $(NAME).o: $(NAME).c $(HEADER)
-	$(CC) -c $(CFLAGS) $< -o $@
+	$(CC) -c $(CFLAGS) -o $@ $< -I$(LIBFT_PATH)
 
 $(NAME_BONUS).o: $(NAME_BONUS).c
 	$(CC) -c $(CFLAGS) -o $@ $<
