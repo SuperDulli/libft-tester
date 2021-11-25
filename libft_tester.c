@@ -6,7 +6,7 @@
 /*   By: chelmerd <chelmerd@student.wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 10:35:15 by chelmerd          #+#    #+#             */
-/*   Updated: 2021/11/24 13:42:14 by chelmerd         ###   ########.fr       */
+/*   Updated: 2021/11/25 13:09:38 by chelmerd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,81 +47,80 @@ static int	test_putstr_fd(void);
 static int	test_putendl_fd(void);
 static int	test_putnbr_fd(void);
 
-
-
 int	main(void)
 {
 	int	error;
 
 	error = 0;
 	printf("Testing ft_isalpha\n");
-	error = test_char_testers(&ft_isalpha, &isalpha);
+	error += test_char_testers(&ft_isalpha, &isalpha);
 	printf("Testing ft_isdigit\n");
-	error = test_char_testers(&ft_isdigit, &isdigit);
+	error += test_char_testers(&ft_isdigit, &isdigit);
 	printf("Testing ft_isalnum\n");
-	error = test_char_testers(&ft_isalnum, &isalnum);
+	error += test_char_testers(&ft_isalnum, &isalnum);
 	printf("Testing ft_isascii\n");
-	error = test_char_testers(&ft_isascii, &isascii);
+	error += test_char_testers(&ft_isascii, &isascii);
 	printf("Testing ft_isprint\n");
-	error = test_char_testers(&ft_isprint, &isprint);
+	error += test_char_testers(&ft_isprint, &isprint);
 	printf("Testing ft_strlen\n");
-	error = test_strlen();
+	error += test_strlen();
 	printf("Testing ft_memset\n");
-	error = test_memset();
+	error += test_memset();
 	printf("Testing ft_bzero\n");
-	error = test_bzero();
+	error += test_bzero();
 	printf("Testing ft_memcpy\n");
-	error = test_memcpy();
+	error += test_memcpy();
 	printf("Testing ft_memmove\n");
-	error = test_memmove();
+	error += test_memmove();
 	printf("Testing ft_strlcpy\n");
-	error = test_strlcpy();
+	error += test_strlcpy();
 	printf("Testing ft_strlcat\n");
-	error = test_strlcat();
+	error += test_strlcat();
 	printf("Testing ft_toupper\n");
-	error = test_toupper();
+	error += test_toupper();
 	printf("Testing ft_tolower\n");
-	error = test_tolower();
+	error += test_tolower();
 	printf("Testing ft_strchr\n");
-	error = test_strchr();
+	error += test_strchr();
 	printf("Testing ft_strrchr\n");
-	error = test_strrchr();
+	error += test_strrchr();
 	printf("Testing ft_strncmp\n");
-	error = test_strncmp();
+	error += test_strncmp();
 	printf("Testing ft_memchr\n");
-	error = test_memchr();
+	error += test_memchr();
 	printf("Testing ft_memcmp\n");
-	error = test_memcmp();
+	error += test_memcmp();
 	printf("Testing ft_strnstr\n");
-	error = test_strnstr();
+	error += test_strnstr();
 	printf("Testing ft_atoi\n");
-	error = test_atoi();
+	error += test_atoi();
 	printf("Testing ft_calloc\n");
-	error = test_calloc();
+	error += test_calloc();
 	printf("Testing ft_strdup\n");
-	error = test_strdup();
+	error += test_strdup();
 	printf("Testing ft_substr\n");
-	error = test_substr();
+	error += test_substr();
 	printf("Testing ft_strjoin\n");
-	error = test_strjoin();
+	error += test_strjoin();
 	printf("Testing ft_strtrim\n");
-	error = test_strtrim();
+	error += test_strtrim();
 	printf("Testing ft_split\n");
-	error = test_split();
+	error += test_split();
 	printf("Testing ft_itoa\n");
-	error = test_itoa();
+	error += test_itoa();
 	printf("Testing ft_strmapi\n");
-	error = test_strmapi();
+	error += test_strmapi();
 	printf("Testing ft_striteri\n");
-	error = test_striteri();
+	error += test_striteri();
 	printf("Testing ft_putchar_fd\n");
-	error = test_putchar_fd();
+	error += test_putchar_fd();
 	printf("Testing ft_putstr_fd\n");
-	error = test_putstr_fd();
+	error += test_putstr_fd();
 	printf("Testing ft_putendl_fd\n");
-	error = test_putendl_fd();
+	error += test_putendl_fd();
 	printf("Testing ft_putnbr_fd\n");
-	error = test_putnbr_fd();
+	error += test_putnbr_fd();
+	printf("Total error value: %d\n", error);
 	return (error);
 }
 
